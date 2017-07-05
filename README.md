@@ -3,7 +3,7 @@ Mike Rydell
 Summer Part Time 2017 Class
 
 This is my first fullstack vue/express/mongoose application.  
-To run our database whenever we restart or start our computer we *Must* fun:
+To run our database whenever we restart or start our computer we *Must* run:
 
 sudo mongod
 
