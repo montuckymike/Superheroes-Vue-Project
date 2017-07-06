@@ -12,14 +12,17 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 app.get("/",function(req,res){
-  res.json("Hello from Get");
+  Superhero.find(function(err,superheroes){
+    if (err) throw err;
+    res.json({data: superheroes, message: "Heroes Received Good"})
+  });
 });
 
 app.post("/", function(req,  res){
   var superhero = new Superhero();
   superhero.name = req.body.name;
   superhero.superpower = req.body.superpower;
-  superhero.save(function(superhero){
+  superhero.save().then(function(superhero){
       res.send(superhero);
     }, function(err){
       res.send(err);
