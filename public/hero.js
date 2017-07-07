@@ -4,6 +4,10 @@ var app = new Vue({
   data: {
   title: title,
   heroes: undefined,
+  postTitle: "Create a Superhero",
+  name: undefined,
+  superpower: undefined,
+  img: undefined
 },
 
 created: function(){
@@ -18,6 +22,22 @@ created: function(){
       }).done(function(response){
         self.heroes = response.data;
         console.log("Received Data", response);
+      })
+    },
+    postHero: function(){
+      var self = this;
+      var newSuperHero = {
+        name: this.name,
+        superpower: this.superpower,
+        img: this.img
+      };
+      console.log(newSuperHero);
+      $.ajax({
+        url: "/api",
+        method: "POST",
+        data: newSuperHero
+      }).done(function(response){
+        console.log(response.data, "Hero Created");
       })
     }
   }
