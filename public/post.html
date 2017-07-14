@@ -76,7 +76,7 @@
         </div>
       </div>
 
-      
+
 
       <form v-on:submit.prevent="postHero">
         <div class="col-md-12">
@@ -95,6 +95,24 @@
           <button type="submit" class="btn btn-success">Submit</button>
         </div>
       </form>
+
+      <form v-on:submit.prevent="postEvilVillian">
+        <div class="col-md-12">
+          <label>Villain Name</label>
+          <input type="text" v-model="name" />
+        </div>
+        <div class="col-md-12">
+          <label>Evil Power</label>
+          <input type="text" v-model="evilPower" />
+        </div>
+        <div class="col-md-12">
+          <label>Villain Picture</label>
+          <input type="text" v-model="img" />
+        </div>
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </form>
     </div>
 
 
@@ -107,5 +125,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
     <script type="text/javascript" src="./hero.js"> </script>
+    <script type="text/javascript" src="./evilVillain.js"> </script>
   </body>
 </html>

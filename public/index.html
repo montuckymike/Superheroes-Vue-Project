@@ -74,12 +74,11 @@
       </div>
 
 
-      <div class="flex-container" >
+      <div class="flex-container">
         <!-- style="background-image: url(h.img)" -->
         <div class="flex-item item1" v-for="h in heroes">
-          <div class="card">
-              <h3>{{ h.name }}</h3>
               <img :src="h.img" class="guy-image" />
+              <h3>{{ h.name }}</h3>
                 <div class="caption">
                   <p class="superPHeader">Superpower:</p>
                   <p class="heroP">{{ h.superpower }}</p>
@@ -90,7 +89,23 @@
                           <a href="#" class="btn btn-default btn-lg btn-block" v-on:click="deleteHero(h._id)">Adios Hero</a>
                         </p>
                 </div>
-          </div>
+        </div>
+      </div>
+
+      <div class="flex-container">
+        <div class="flex-item item1" v-for="v in evilVillains">
+              <img :src="v.img" class="guy-image" />
+              <h3>{{ v.name }}</h3>
+                <div class="caption">
+                  <p class="superPHeader">Evil Power:</p>
+                  <p class="heroP">{{ v.evilPower }}</p>
+                </div>
+                    <div class="button">
+                      <p>
+                          <a href="#" class="btn btn-primary btn-lg btn-block" >My Villain</a>
+                          <a href="#" class="btn btn-default btn-lg btn-block" v-on:click="deleteEvilVillain(v._id)">Adios Villain</a>
+                        </p>
+                </div>
         </div>
       </div>
 
@@ -105,5 +120,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
     <script type="text/javascript" src="./hero.js"> </script>
+    <!-- <script type="text/javascript" src="./evilVillain.js"> </script> -->
   </body>
 </html>
