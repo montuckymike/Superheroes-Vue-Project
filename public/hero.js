@@ -18,10 +18,11 @@ created: function(){
       var self = this;
       $.ajax({
         method: "GET",
-        url: "/api"
+        url: "/api/heroes"
       }).done(function(response){
+        console.log(response);
         self.heroes = response.data;
-        console.log("Received Data", response);
+      console.log("Received Data", response);
       })
     },
     postHero: function(){
@@ -33,11 +34,22 @@ created: function(){
       };
       console.log(newSuperHero);
       $.ajax({
-        url: "/api",
+        url: "/api/heroes",
         method: "POST",
         data: newSuperHero
       }).done(function(response){
+        console.log(response);
         console.log(response.data, "Hero Created");
+      });
+    },
+    deleteHero: function(_id){
+      console.log("Audios Hero:", _id);
+      var self = this;
+      $.ajax({
+        method: "DELETE",
+        url: "/api/heroes/" + _id
+      }).done(function(response){
+        console.log(response);
       })
     }
   }
