@@ -1,9 +1,9 @@
 var title = "Villains";
 var app = new Vue ({
-  el: "#app",
+  el: "#app-villain",
   data: {
     title: title,
-    evilVIllains: undefined,
+    evilVillains: undefined,
     postTitle: "Create a Villain",
     name: undefined,
     evilPower: undefined,
@@ -18,7 +18,7 @@ var app = new Vue ({
       var self = this;
       $.ajax({
         method: "GET",
-        url: "/api/evilVillains"
+        url: "/api/villains"
       }).done(function(response){
         console.log(response);
         self.evilVillains = response.data;
@@ -34,7 +34,7 @@ var app = new Vue ({
       };
       console.log(newVillain);
       $.ajax({
-        url: "/api/evilVillains",
+        url: "/api/villains",
         method: "POST",
         data: newVillain
       }).done(function(response){
@@ -47,7 +47,7 @@ var app = new Vue ({
       var self = this;
       $.ajax({
         method: "DELETE",
-        url: "api/evilVillains/" + _id
+        url: "api/villains/" + _id
       }).done(function(response){
         console.log(response);
       })

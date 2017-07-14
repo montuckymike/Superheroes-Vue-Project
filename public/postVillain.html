@@ -9,7 +9,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/postStyle.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,6 +18,9 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+
+
+
   <body>
     <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -62,92 +65,38 @@
     </nav>
 
 
-    <div class="bg"></div>
-    <div class="jumbotron">
-      <div class="jumboHeader">
-        <div class="jumboHeaderText">
-          <h1>Heroes and Villains</h1>
-          <p class="lead">Good vs Evil</p>
+    <div id="app-villain">
+
+      <div class="bg"></div>
+      <div class="jumbotron">
+        <div class="jumboHeader">
+          <div class="jumboHeaderText">
+            <h1>{{ postTitle }}</h1>
+            <p class="lead">Tell Us Your Favorite Villain</p>
+          </div>
         </div>
       </div>
+
+
+      <form v-on:submit.prevent="postEvilVillian">
+        <div class="col-md-12">
+          <label>Villain Name</label>
+          <input type="text" v-model="name" />
+        </div>
+        <div class="col-md-12">
+          <label>Evil Power</label>
+          <input type="text" v-model="evilPower" />
+        </div>
+        <div class="col-md-12">
+          <label>Villain Picture</label>
+          <input type="text" v-model="img" />
+        </div>
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </form>
     </div>
 
-<div id = "app">
-
-  <div class="heroBlock">
-        <div class="heroTitleBlock">
-              <div>
-                <h1 class="heroTitle"><span class="highlightHero">{{ title }}</a></h1>
-              </div>
-              <div>
-                <p class="heroSubTitle"><span class="highlightSubHero">They have super strength, can fly, save babies...</a></p>
-              </div>
-              <div class="button heroButton">
-                <p>
-                    <a href="http://localhost:3000/post.html" class="btn btn-primary btn-lg btn-block" >Add Hero</a>
-                </p>
-              </div>
-        </div>
-  </div>
-
-    
-      <div class="flex-container">
-        <!-- style="background-image: url(h.img)" -->
-        <div class="flex-item item1" v-for="h in heroes">
-              <img :src="h.img" class="guy-image" />
-              <h3>{{ h.name }}</h3>
-                <div class="caption">
-                  <p class="superPHeader">Superpower:</p>
-                  <p class="heroP">{{ h.superpower }}</p>
-                </div>
-                    <div class="button">
-                      <p>
-                          <a href="#" class="btn btn-primary btn-lg btn-block" >My Hero</a>
-                          <a href="#" class="btn btn-default btn-lg btn-block" v-on:click="deleteHero(h._id)">Adios Hero</a>
-                        </p>
-                </div>
-        </div>
-      </div>
-
-</div>
-
-<div id = "app-villain">
-
-  <div class="villainBlock">
-        <div class="villainTitleBlock">
-              <div>
-                <h1 class="villainTitle"><span class="highlightVillain">{{ title }}</a></h1>
-              </div>
-              <div>
-                <p class="villainSubTitle"><span class="highlightSubVillain">They rob, steal, pillage, and jaywalk...</a></p>
-              </div>
-              <div class="button villainButton">
-                <p>
-                    <a href="http://localhost:3000/postVillain.html" class="btn btn-primary btn-lg btn-block" >Add Villain</a>
-                </p>
-              </div>
-        </div>
-  </div>
-
-
-      <div class="flex-container">
-        <div class="flex-item item1" v-for="v in evilVillains">
-              <img :src="v.img" class="guy-image" />
-              <h3>{{ v.name }}</h3>
-                <div class="caption">
-                  <p class="superPHeader">Evil Power:</p>
-                  <p class="heroP">{{ v.evilPower }}</p>
-                </div>
-                    <div class="button">
-                      <p>
-                          <a href="#" class="btn btn-primary btn-lg btn-block" >My Villain</a>
-                          <a href="#" class="btn btn-default btn-lg btn-block" v-on:click="deleteEvilVillain(v._id)">Adios Villain</a>
-                        </p>
-                </div>
-        </div>
-      </div>
-
-</div>
 
 
 
@@ -157,7 +106,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
-    <script type="text/javascript" src="./hero.js"> </script>
     <script type="text/javascript" src="./evilVillain.js"> </script>
   </body>
 </html>

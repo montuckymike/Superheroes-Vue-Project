@@ -42,6 +42,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="http://localhost:3000/">Home <span class="sr-only">(current)</span></a></li>
             <li><a href="http://localhost:3000/post.html">Add Hero</a></li>
+            <li><a href="http://localhost:3000/postVillain.html">Add Villain</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -96,23 +97,7 @@
         </div>
       </form>
 
-      <form v-on:submit.prevent="postEvilVillian">
-        <div class="col-md-12">
-          <label>Villain Name</label>
-          <input type="text" v-model="name" />
-        </div>
-        <div class="col-md-12">
-          <label>Evil Power</label>
-          <input type="text" v-model="evilPower" />
-        </div>
-        <div class="col-md-12">
-          <label>Villain Picture</label>
-          <input type="text" v-model="img" />
-        </div>
-        <div class="col-md-12">
-          <button type="submit" class="btn btn-success">Submit</button>
-        </div>
-      </form>
+
     </div>
 
 
@@ -125,6 +110,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
     <script type="text/javascript" src="./hero.js"> </script>
-    <script type="text/javascript" src="./evilVillain.js"> </script>
   </body>
 </html>

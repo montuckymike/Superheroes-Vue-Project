@@ -23,6 +23,7 @@
   text-shadow: #444 0 1px 1px;
   background: transparent;
 }
+
 .jumboHeader {
   width: 50%;
   margin: auto;
@@ -32,6 +33,7 @@
   text-align: center;
   background: rgba(87, 85, 85, 0.7);
 }
+
 .flex-container {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -48,9 +50,9 @@
   text-align: center;
   margin: 10px;
   width: calc(33.333% - 20px);
-  background-color:
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
+
 .item1 {
   display: flex;
   flex-direction: column;
@@ -74,4 +76,84 @@ img.brandImg {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+
+.villainBlock {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 500px;
+  background-color: rgb(28,28,28);
+}
+
+.villainTitle {
+  font-size: 50px;
+  color: red;
+
+}
+
+.highlightVillain:hover {
+  color: white;
+}
+
+.villainSubTitle {
+  color: red;
+  font-size: 20px;
+}
+
+.highlightSubVillain:hover {
+  color: white;
+}
+
+.villainTitleBlock {
+  padding: 5px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+.heroBlock {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 500px;
+  background-color: rgb(28,28,28);
+}
+
+.heroTitle {
+  font-size: 50px;
+  color: white;
+
+}
+
+.highlightHero:hover {
+  color: red;
+}
+
+.heroSubTitle {
+  color: white;
+  font-size: 20px;
+}
+
+.highlightSubHero:hover {
+  color: blue;
+}
+
+.heroTitleBlock {
+  padding: 5px;
+  text-align: center;
 }
